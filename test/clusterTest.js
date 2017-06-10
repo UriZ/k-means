@@ -41,5 +41,20 @@ describe('Cluster tests', function() {
         mean.should.equal(zero);
 
     });
+
+    it('clear data set', ()=>{
+
+        let c = new Cluster([0,0,0]);
+
+        c.setDataSet([[1,1,1], [2,2,2], [3,3,3]]);
+
+        c.clearDataSet();
+
+        let set = c.getDataSets();
+
+        set.should.be.an('array').that.is.empty;
+
+    });
+
 })
 
