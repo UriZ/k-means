@@ -5,8 +5,8 @@ This repository contains an implementation of the k-means algorithm:
 
 Algorithm 
 
-Usage 
+# Usage 
 
-Postman collection 
+- To test the function directly, you can use the attached Postman collection to get started  
 
 
