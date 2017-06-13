@@ -43,39 +43,27 @@ Algorithm steps:
 # API
 ## Azure function 
 - The function expects a POST request with the following JSON structure as the body:
-
+```json
 {
-  
-    "kMeansInput":
+  "kMeansInput":
     {
-    
-    dataSet: [[1,1,1],[2,2,2],[1,1,1],[4,5,5],[9,9,9],[4,4,4]],
-    
-    k:3,
-    
-    maxIterations:10
-    
+      dataSet: [[1,1,1],[2,2,2],[1,1,1],[4,5,5],[9,9,9],[4,4,4]],
+      k:3,
+      maxIterations:10
     }
-    
 }
-
+```
 - The function returns the following JSON structure:
-
+```json
   {
-  
     "k-means clusters":
-    
       [
-      
         {"mean":[2,2,2],"size":1,"observations":[[2,2,2]]},
-        
-        {"mean":[5.666666666666667,6,6],"size":3,"observations":[[4,5,5],[9,9,9],[4,4,4]]},
-        
+        {"mean":[5.666666666666667,6,6],"size":3,"observations":[[4,5,5],[9,9,9],[4,4,4]]},   
         {"mean":[1,1,1],"size":2,"observations":[[1,1,1],[1,1,1]]}
-        
       ]
-      
   }
+```
 
 
 
