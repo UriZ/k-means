@@ -18,8 +18,9 @@ Algorithm steps:
 ## Azure function
 - The function can be trigered by a console application, available here: https://github.com/UriZ/kmconsole and running here: http://173.193.107.30:31798/
 - To test the Azure function directly, you can use the attached Postman collection
-## Stand alone implementation
+## Stand alone module
 - Use the following pattern
+
   // requrie the module, e.g.
   const kMeans = require('../lib/kMeans.js');
   
@@ -37,7 +38,47 @@ Algorithm steps:
                 console.log("observations: " + JSON.stringify(cluster.getObservations()));
             }
 
-# Testing
-run npm test to run unit tests on the module 
 
+# API
+## Azure function 
+- The function expects a POST request with the following JSON structure as the body:
+
+  {
+  
+    "kMeansInput": {
+    
+    dataSet: [[1,1,1],[2,2,2],[1,1,1],[4,5,5],[9,9,9],[4,4,4]],
+    
+    k:3,
+    
+    maxIterations:10
+    
+    }
+    
+}
+
+- The function returns the following JSON structure:
+
+  {
+  
+    "k-means clusters":
+    
+      [
+      
+        {"mean":[2,2,2],"size":1,"observations":[[2,2,2]]},
+        
+        {"mean":[5.666666666666667,6,6],"size":3,"observations":[[4,5,5],[9,9,9],[4,4,4]]},
+        
+        {"mean":[1,1,1],"size":2,"observations":[[1,1,1],[1,1,1]]}
+        
+      ]
+      
+  }
+
+
+
+## Stand alone module 
+- 
+# Testing
+run npm test to run the unit tests covering the module 
 
