@@ -21,30 +21,24 @@ Algorithm steps:
 ## Stand alone module
 - Use the following pattern
 
+```javascript
   // requrie the module, e.g.
-  
   const kMeans = require('../lib/kMeans.js');
   
   // init module with input data : data set, number of clusters, max iterations 
-  
   let km = kMeans([[1,1,1],[2,2,2],[100,100,100],[99,99,99],[0,0,0]],2,100);
   
   // run the algorithm
-  
   let clusters = km.kMeansClustering();
-
+  
   // use cluster data, e.g. print to console
-  
   for (let cluster of clusters)
-  
-            {
-            
-                console.log("mean: " + cluster.getMean());
-                console.log("size: " + cluster.getObservations().length);
-                console.log("observations: " + JSON.stringify(cluster.getObservations()));
-                
-            }
-
+  {
+    console.log("mean: " + cluster.getMean());
+    console.log("size: " + cluster.getObservations().length);
+    console.log("observations: " + JSON.stringify(cluster.getObservations()));   
+  }
+```
 
 # API
 ## Azure function 
