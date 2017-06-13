@@ -70,7 +70,7 @@ Algorithm steps:
 ## Stand alone module 
 - ### kMeans module
 The main implementation module, exposes a single function 
-  - kMeans(dataSet, k, maxIterations) - this function recieves a data set (array of arrays), number of clusters and max iterations number,     and returns the module exposing the clustering api: kMeansClustering
+  - kMeans(dataSet, k, maxIterations) - this function recieves a data set (array of arrays), number of clusters and max iterations number,     and returns a module exposing the clustering api: kMeansClustering
   - kMeansClustering -performs the clustering algorithm on the given data, returns an array of Clusters
 
 - ### Cluster
