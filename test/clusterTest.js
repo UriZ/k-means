@@ -10,9 +10,9 @@ describe('Cluster tests', function() {
 
         let c = new Cluster([1,1,1]);
 
-        c.addDataSet([1,1,1]);
-        c.addDataSet([2,2,2]);
-        c.addDataSet([3,3,3]);
+        c.addObservation([1,1,1]);
+        c.addObservation([2,2,2]);
+        c.addObservation([3,3,3]);
 
         c.calculateMean();
 
@@ -42,18 +42,17 @@ describe('Cluster tests', function() {
 
     });
 
-    it('clear data set', ()=>{
+    it('clear observations', ()=>{
 
         let c = new Cluster([0,0,0]);
 
-        c.setDataSet([[1,1,1], [2,2,2], [3,3,3]]);
+        c.setObservations([[1,1,1], [2,2,2], [3,3,3]]);
 
-        c.clearDataSet();
+        c.clearObservations();
 
-        let set = c.getDataSets();
+        let observations = c.getObservations();
 
-        set.should.be.an('array').that.is.empty;
-
+        observations.should.be.an('array').that.is.empty;
     });
 
 })

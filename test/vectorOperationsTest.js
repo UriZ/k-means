@@ -39,6 +39,14 @@ describe('vectorOperations tests', ()=>{
         expect(() =>  VectorOperations.distance(v1,v2)).to.throw(Error, "vectors must contain numbers only");
     });
 
+    it('distance between vectors with missing input', ()=>{
+
+        let v1 = [0,0];
+        let v2;
+
+        expect(() =>  VectorOperations.distance(v1,v2)).to.throw(Error, "missing input parameters");
+    });
+
     it('equality between vectors', ()=>{
 
         let v1 = [1,1,1];
@@ -67,5 +75,12 @@ describe('vectorOperations tests', ()=>{
         expect( ()=> VectorOperations.isEqual(v1,v2)).to.throw(Error,"vectors must contain numbers only");
     });
 
+    it('equality between vectors with missing input', ()=>{
+
+        let v1;
+        let v2 = [1,1,1];
+
+        expect( ()=> VectorOperations.isEqual(v1,v2)).to.throw(Error,"missing input parameters");
+    });
 
 });
