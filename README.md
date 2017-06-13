@@ -68,7 +68,17 @@ Algorithm steps:
 
 
 ## Stand alone module 
-- 
+- ### kMeans module
+The main implementation module, exposes a single function 
+  - kMeans(dataSet, k, maxIterations) - this function recieves a data set (array of arrays), number of clusters and max iterations number,     and returns the module exposing the clustering api: kMeansClustering
+  - kMeansClustering -performs the clustering algorithm on the given data, returns an array of Clusters
+
+- ### Cluster
+Implements a cluster of observations (n dimensional arrays). Exposes the following api
+  - get/setMean - cluster mean 
+  - get/setObservations - the observations belonging to the cluster
+
+
 # Testing
 run npm test to run the unit tests covering the module 
 
