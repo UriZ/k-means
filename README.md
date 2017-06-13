@@ -15,7 +15,29 @@ Algorithm steps:
 - convergence is reached when the means dont change (or when a maximal number of iterations has passed)
 
 # Usage 
+## Azure function
 - The function can be trigered by a console application, available here: https://github.com/UriZ/kmconsole and running here: http://173.193.107.30:31798/
-- To test the Azure function directly, you can use the attached Postman collection to get started  
+- To test the Azure function directly, you can use the attached Postman collection
+## Stand alone implementation
+- Use the following pattern
+  // requrie the module, e.g.
+  const kMeans = require('../lib/kMeans.js');
+  
+  // init module with input data : data set, number of clusters, max iterations 
+  let km = kMeans([[1,1,1],[2,2,2],[100,100,100],[99,99,99],[0,0,0]],2,100);
+  
+  // run the algorithm
+  let clusters = km.kMeansClustering();
+
+  // use cluster data, e.g. print to console
+  for (let cluster of clusters)
+            {
+                console.log("mean: " + cluster.getMean());
+                console.log("size: " + cluster.getObservations().length);
+                console.log("observations: " + JSON.stringify(cluster.getObservations()));
+            }
+
+# Testing
+run npm test to run unit tests on the module 
 
 
