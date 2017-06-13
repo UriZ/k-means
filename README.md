@@ -44,14 +44,14 @@ Algorithm steps:
 ## Azure function 
 - The function expects a POST request with the following JSON structure as the body:
 ```json
-{
-  "kMeansInput":
-    {
-      dataSet: [[1,1,1],[2,2,2],[1,1,1],[4,5,5],[9,9,9],[4,4,4]],
-      k:3,
-      maxIterations:10
-    }
-}
+  {
+    "kMeansInput":
+      {
+        dataSet: [[1,1,1],[2,2,2],[1,1,1],[4,5,5],[9,9,9],[4,4,4]],
+       k:3,
+       maxIterations:10
+      }
+  }
 ```
 - The function returns the following JSON structure:
 ```json
