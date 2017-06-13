@@ -1,0 +1,51 @@
+{
+	"variables": [],
+	"info": {
+		"name": "k-means",
+		"_postman_id": "e44b6017-345f-28a6-ba8b-e5aba4914f85",
+		"description": "send a request directly to the k-means function ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "bad request",
+			"request": {
+				"url": "https://kmeansuriz.azurewebsites.net/api/kMeans",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"kMeansInput\": {\n    \n    dataSet: [[1,1,1],[2,2,2],[1,1,1],[4,5,5],[9,9,9],[4,4,4]],\n    k:10,\n    maxIterations:10\n    }\n}"
+				},
+				"description": "ba request - more clusters than observations"
+			},
+			"response": []
+		},
+		{
+			"name": "valid request",
+			"request": {
+				"url": "https://kmeansuriz.azurewebsites.net/api/kMeans",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"kMeansInput\": {\n    \n    dataSet: [[1,1,1],[2,2,2],[1,1,1],[4,5,5],[9,9,9],[4,4,4]],\n    k:2,\n    maxIterations:10\n    }\n}"
+				},
+				"description": "valid request for 2 clusters"
+			},
+			"response": []
+		}
+	]
+}
